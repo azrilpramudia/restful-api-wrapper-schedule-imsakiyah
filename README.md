@@ -1,22 +1,20 @@
 # 🌙 Jadwal Imsakiyah API
 
-Rest API sederhana untuk mendapatkan jadwal imsakiyah dan sholat berdasarkan kota di Indonesia. Dibangun menggunakan Hono.js + Bun + TypeScript, **Ramadhan Code Fest 2026**.
+A simple API wrapper to get prayer and imsakiyah schedules based on cities in Indonesia. Built with Hono.js + Bun + TypeScript
 
 ## 🛠️ Tech Stack
 
 - [Bun](https://bun.sh/) - JavaScript runtime & package manager
 - [Hono.js](https://hono.dev/) - Lightweight web framework
 - TypeScript
-- [MyQuran API v3](https://api.myquran.com) - Sumber data jadwal sholat
+- [MyQuran API v3](https://api.myquran.com) - Prayer schedule data source
 
-## 🚀 Cara Install & Run
+## 🚀 Installation & Running
 
 ### Prerequisites
+- Latest version of Bun
 
-- Bun versi terbaru
-
-### Instalasi
-
+### Installation
 ```bash
 # Clone repository
 git clone https://github.com/IMPHNEN/Ramadhan-Code-Fest-2026.git
@@ -25,22 +23,19 @@ cd Ramadhan-Code-Fest-2026/jadwal-imsakiyah
 # Install dependencies
 bun install
 
-# Jalankan development server
+# Run development server
 bun run dev
 ```
 
-Server akan berjalan di `http://localhost:3000`
+Server will run at `http://localhost:3000`
 
 ## 📡 Endpoints
 
 ### 1. Welcome
-
 ```
 GET /
 ```
-
 **Response:**
-
 ```json
 {
   "success": true,
@@ -56,14 +51,11 @@ GET /
 
 ---
 
-### 2. List Semua Kota
-
+### 2. List All Cities
 ```
 GET /kota
 ```
-
 **Response:**
-
 ```json
 {
   "success": true,
@@ -79,14 +71,11 @@ GET /kota
 
 ---
 
-### 3. Cari Kota by Keyword
-
+### 3. Search City by Keyword
 ```
 GET /kota?keyword=bandung
 ```
-
 **Response:**
-
 ```json
 {
   "success": true,
@@ -102,20 +91,15 @@ GET /kota?keyword=bandung
 
 ---
 
-### 4. Jadwal Sholat Hari Ini
-
+### 4. Today's Prayer Schedule
 ```
 GET /jadwal/:kotaId
 ```
-
-**Contoh:**
-
+**Example:**
 ```
 GET /jadwal/fa7cdfad1a5aaf8370ebeda47a1ff1c3
 ```
-
 **Response:**
-
 ```json
 {
   "success": true,
@@ -139,20 +123,15 @@ GET /jadwal/fa7cdfad1a5aaf8370ebeda47a1ff1c3
 
 ---
 
-### 5. Jadwal Sholat by Tanggal
-
+### 5. Prayer Schedule by Date
 ```
 GET /jadwal/:kotaId/:tahun/:bulan/:hari
 ```
-
-**Contoh:**
-
+**Example:**
 ```
-GET /jadwal/fa7cdfad1a5aaf8370ebeda47a1ff1c3/2026/02/21
+GET /jadwal/fa7cdfad1a5aaf8370ebeda47a1ff1c3/2026/03/01
 ```
-
 **Response:**
-
 ```json
 {
   "success": true,
@@ -174,8 +153,7 @@ GET /jadwal/fa7cdfad1a5aaf8370ebeda47a1ff1c3/2026/02/21
 }
 ```
 
-## 📁 Struktur Project
-
+## 📁 Project Structure
 ```
 jadwal-imsakiyah/
 ├── src/
